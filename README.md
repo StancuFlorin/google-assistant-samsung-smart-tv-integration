@@ -12,6 +12,14 @@ Use your Google Home device as a remote for your Samsung Smart TV. There is no n
 - ``pip install httplib2 paho-mqtt``
 - [devicehub](https://github.com/devicehubnet/devicehub_py) ``pip install devicehub``
 
+## Installation ##
+
+### DeviceHub ###
+- create a free account on [devicehub.net](https://www.devicehub.net)
+- create a project on devicehub.net (ex: Samsung Remote)
+- add a device on the respective project (ex: Raspberry Pi)
+- add an actuator on the respective device (ex: samsung_smart_tv_remote)
+
 ## Make the script start at startup ##
 
 You may want to make the script start each time you boot your Raspberry Pi. There are several ways how to do it. Here is one.
