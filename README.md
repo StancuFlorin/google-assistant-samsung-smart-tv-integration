@@ -25,6 +25,7 @@ Use your Google Home device as a remote for your Samsung Smart TV. There is no n
 - You need to create a file named ``config.py``. There is an example on ``config.py.example``.
 - To enable to comunication with your TV you will need to put the correct IP on ``REMOTE.host``. Your TV should be on the same network with the PC that will run this script. If you have an older TV (<2016) you will need to change the method and the port also. Check [samsungctl](https://github.com/Ape/samsungctl) for more information.
 - The DeviceHub information also needs to be added. Make sure that you add the correct data there.
+- Run the script using ``python samsung-remote.py`` or ``./samsung-remote.py``
 
 ### IFTTT ###
 
