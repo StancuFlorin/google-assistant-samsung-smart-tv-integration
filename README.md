@@ -67,3 +67,6 @@ Before ``exit 0`` put the below line. This will start the script 15 seconds afte
 sudo reboot
 ``
 
+## Tested Devices ##
+
+- Samsung UE49K5502
