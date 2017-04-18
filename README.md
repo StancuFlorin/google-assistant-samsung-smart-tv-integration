@@ -4,6 +4,13 @@ Use your Google Home device as a remote for your Samsung Smart TV. There is no n
 
 ![Integration Flow](https://raw.githubusercontent.com/StancuFlorin/Google-Home-Samsung-Smart-TV-Integration/pic/flow.png "Integration Flow")
 
+## Requirements ##
+
+- Python 2.7
+- [samsungctl](https://github.com/Ape/samsungctl) ``pip install samsungctl``
+- [devicehub](https://github.com/devicehubnet/devicehub_py) ``pip install devicehub``
+- ``pip install websocket-client httplib2 paho-mqtt``
+
 ## Make the script start at startup ##
 
 You may want to make the script start each time you boot your Raspberry Pi. There are several ways how to do it. Here is one.
