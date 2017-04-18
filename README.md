@@ -46,7 +46,7 @@ You can add your custom commands on ``commands.py`` file.
 
 ## Make the script start at startup ##
 
-You may want to make the script start each time you boot your Raspberry Pi. There are several ways how to do it. Here is one.
+If you use a Raspberry Pi to run this script you may want to make it start each time you boot your device. There are several ways how to do it. Here is one.
 
 ``
 $ sudo chmod +x /path/to/your/script/samsung-remote.py
