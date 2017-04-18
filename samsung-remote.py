@@ -25,10 +25,10 @@ def process_event(data):
         else:
             print 'There is no custom command implemented for ', event.state
 
-project = Project(config.PROJECT_ID, persistent = False)
-device = Device(project, config.DEVICE_UUID, config.API_KEY)
+project = Project(config.DEVICE_HUB["project_id"], persistent = False)
+device = Device(project, config.DEVICE_HUB["device_uuid"], config.DEVICE_HUB["api_key"])
 
-event = Actuator(Actuator.ANALOG, 'change_channel')
+event = Actuator(Actuator.ANALOG, config.DEVICE_HUB["actuator_name"])
 device.addActuator(event, process_event)
 
 while True:

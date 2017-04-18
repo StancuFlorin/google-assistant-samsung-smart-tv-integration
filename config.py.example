@@ -3,13 +3,16 @@ REMOTE = {
     "name": "Raspberry Pi Remote",
     "description": "Google Home Integration",
     "id": "",
-    "host": "tv ip",
+    "host": "192.168.100.10", # The IP of the TV
     "port": 8001,
     "method": "websocket",
     "timeout": 0
 }
 
 # DeviceHub Configuration
-PROJECT_ID = 'device hub project id'
-DEVICE_UUID = 'device hub device uuid'
-API_KEY = 'device hub api key'
+DEVICE_HUB = {
+    "project_id": "123456",
+    "device_uuid": "77a1ae90-2468-11e7-93ae-92361f002671",
+    "api_key": "77a1b19c-2468-11e7-93ae-92361f002671",
+    "actuator_name": "samsung_smart_tv_remote"	
+}
