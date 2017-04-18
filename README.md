@@ -42,6 +42,8 @@ Actuator State | Command
 -------------- | -------
 201 | Turn off the TV
 
+You can add your custom command on ``commands.py`` file.
+
 ## Make the script start at startup ##
 
 You may want to make the script start each time you boot your Raspberry Pi. There are several ways how to do it. Here is one.
