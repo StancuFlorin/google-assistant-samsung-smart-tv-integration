@@ -1,6 +1,6 @@
-# Rasberry Pi Samsung TV Remote #
+# Google Home - Samsung Smart TV Integration #
 
-TBA
+Use your Google Home device as a remote for your Samsung Smart TV. There is no need for a Logitech Harmony device.
 
 ## Make the script start at startup ##
 
