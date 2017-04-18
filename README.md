@@ -42,7 +42,7 @@ Actuator State | Command
 -------------- | -------
 201 | Turn off the TV
 
-You can add your custom command on ``commands.py`` file.
+You can add your custom commands on ``commands.py`` file.
 
 ## Make the script start at startup ##
 
