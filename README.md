@@ -7,9 +7,10 @@ Use your Google Home device as a remote for your Samsung Smart TV. There is no n
 ## Requirements ##
 
 - Python 2.7
+- ``pip install websocket-client``
 - [samsungctl](https://github.com/Ape/samsungctl) ``pip install samsungctl``
+- ``pip install httplib2 paho-mqtt``
 - [devicehub](https://github.com/devicehubnet/devicehub_py) ``pip install devicehub``
-- ``pip install websocket-client httplib2 paho-mqtt``
 
 ## Make the script start at startup ##
 
