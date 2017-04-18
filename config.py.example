@@ -1,0 +1,15 @@
+# Samsung Smart TV Remote Config
+REMOTE = {
+    "name": "Raspberry Pi Remote",
+    "description": "Google Home Integration",
+    "id": "",
+    "host": "tv ip",
+    "port": 8001,
+    "method": "websocket",
+    "timeout": 0
+}
+
+# DeviceHub Configuration
+PROJECT_ID = 'device hub project id'
+DEVICE_UUID = 'device hub device uuid'
+API_KEY = 'device hub api key'
