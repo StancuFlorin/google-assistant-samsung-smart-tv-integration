@@ -1,0 +1,4 @@
+configparser 
+pika
+samsungctl
+websocket-client
