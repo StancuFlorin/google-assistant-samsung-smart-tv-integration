@@ -40,7 +40,29 @@ Use your Google Home device as a remote for your Samsung Smart TV. There is no n
 - On ``that`` select ``Maker Webhooks`` and ``Make a web request`` from there.
 - On URL add ``https://pspeaemf:ByOti2ToHWya_dV79B85GaDZaORBpi3L@lark.rmq.cloudamqp.com/api/exchanges/pspeaemf/google.home.assistant/publish``. Change the username, password and the RabbitMQ host with your own.
 - Select ``POST`` method and ``application/json`` as content type.
-- On body add ``{ "properties": { "content-type": "application/json" }, "routing_key": "samsung.smart.tv", "payload": "{\"command\": \"CHANGE_CHANNEL\", \"value\": \"135\"}", "payload_encoding": "string" }``. 135 is the channel number for HBO. You can add different applets like this for whatever channel you want and the only thing that you need to change is the the ``value`` node. You can also use custom commands like ``turn off the tv``, but you need to change the ``command`` node like in this example ``{ "properties": { "content-type": "application/json" }, "routing_key": "samsung.smart.tv", "payload": "{\"command\": \"TURN_OFF\"}", "payload_encoding": "string" }``
+- On body add  
+	```
+	{
+		"properties":{
+		  "content-type":"application/json"
+		},
+		"routing_key":"samsung.smart.tv",
+		"payload":"{\"command\": \"CHANGE_CHANNEL\", \"value\": \"135\"}",
+		"payload_encoding":"string"
+	}
+	```
+	135 is the channel number for HBO. You can add different applets like this for whatever channel you want and the only thing that you need to change is the the ``value`` node. 
+	You can also use custom commands like ``turn off the tv``, but you need to change the ``command`` node like in this example 
+	```
+	{
+		"properties":{
+		  "content-type":"application/json"
+		},
+		"routing_key":"samsung.smart.tv",
+		"payload":"{\"command\": \"TURN_OFF\"}",
+		"payload_encoding":"string"
+	}
+	```
 
 ## Custom Commands ##
 
