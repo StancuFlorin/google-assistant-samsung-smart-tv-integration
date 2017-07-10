@@ -16,18 +16,18 @@ Use your Google Home device as a remote for your Samsung Smart TV. There is no n
 - Create a new instance. The free plan is enough.
 - Go to the RabbitMQ Manager.
 - Add a new ``exchange``:
-	- name: google.home.assistant
-	- type: direct
+	- name: ``google.home.assistant``
+	- type: ``direct``
 - Add a new ``queue``:
-	- name: samsung.smart.tv
-	- arguments: Message TTL with the value of 30000
+	- name: ``samsung.smart.tv``
+	- arguments: ``Message TTL`` with the value of ``30000``. The name of this feature is ``x-message-ttl``
 - Go back to the exchange that you created and add a binding to the queue:
-	- name: samsung.smart.tv
-	- routing key: samsung.smart.tv
+	- name: ``samsung.smart.tv``
+	- routing key: ``samsung.smart.tv``
 
 ### Locally ###
 
-- Check the config.ini file and add your own details there.
+- Check the ``config.ini`` file and add your own details there.
 - To enable to comunication with your TV you will need to put the correct IP on ``SamsungSmartTV.host``. Your TV should be on the same network with the PC that will run this script. If you have an older TV (<2016) you will need to change the method and the port also. Check [samsungctl](https://github.com/Ape/samsungctl) for more information.
 - The CloudAMQP information also needs to be added. Make sure that you add the correct data there.
 - Run the script using ``python samsung-smart-tv-remote.py`` or ``./samsung-smart-tv-remote.py``
