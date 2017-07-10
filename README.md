@@ -51,8 +51,8 @@ Use your Google Home device as a remote for your Samsung Smart TV. There is no n
 		"payload_encoding":"string"
 	}
 	```
-	- 135 is the channel number for HBO. You can add different applets like this for whatever channel you want and the only thing that you need to change is the the ``value`` node.  
-	- You can also use custom commands like ``turn off the tv``, but you need to change the ``command`` node like in this example 
+	- In the above example, ``135`` is the channel number for HBO. You can add different applets like this for whatever channel you want and the only thing that you need to change is the the ``value`` node.  
+	- You can also use custom commands like ``turn off the tv``, but you need to change the ``command`` node like in this example:
 	```
 	{
 		"properties":{
