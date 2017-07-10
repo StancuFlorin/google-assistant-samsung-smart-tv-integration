@@ -76,19 +76,13 @@ TURN_OFF | Turn off the TV
 
 If you use a Raspberry Pi to run this script you may want to make it start each time you boot your device. There are several ways how to do it. Here is one.
 
-``
-$ sudo nano /etc/rc.local
-``
+``# nano /etc/rc.local``
 
 Before ``exit 0`` put the below line. This will start the script 15 seconds after the device is up.
 
-``
-/bin/sleep 15 && cd /path/to/your/script && python samsung-smart-tv-remote.py &
-``
+``/bin/sleep 15 && cd /path/to/your/script && python samsung-smart-tv-remote.py &``
 
-``
-sudo reboot
-``
+``# reboot``
 
 ## Tested Devices ##
 
