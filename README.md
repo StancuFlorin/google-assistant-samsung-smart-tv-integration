@@ -7,7 +7,7 @@ Use your Google Home device as a remote for your Samsung Smart TV. There is no n
 ## Requirements ##
 
 - Python 2.7
-- # pip install -r requirements.txt
+- ``# pip install -r requirements.txt``
 
 ## Installation ##
 
