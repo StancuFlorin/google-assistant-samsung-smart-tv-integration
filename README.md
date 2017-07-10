@@ -66,7 +66,7 @@ Use your Google Home device as a remote for your Samsung Smart TV. There is no n
 
 ## Custom Commands ##
 
-Here is the list of the custom commands implemented so far.
+Here is the list of the custom commands implemented so far:
 
 Command Code | Command Description
 ------------ | -------
