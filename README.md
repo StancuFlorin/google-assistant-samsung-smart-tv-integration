@@ -7,18 +7,23 @@ Use your Google Home device as a remote for your Samsung Smart TV. There is no n
 ## Requirements ##
 
 - Python 2.7
-- ``pip install websocket-client``
-- [samsungctl](https://github.com/Ape/samsungctl) ``pip install samsungctl``
-- ``pip install httplib2 paho-mqtt``
-- [devicehub](https://github.com/devicehubnet/devicehub_py) ``pip install devicehub``
+- # pip install -r requirements.txt
 
 ## Installation ##
 
-### DeviceHub ###
-- Create a free account on [DeviceHub](https://www.devicehub.net).
-- Create a project on DeviceHub.
-- Add a device on the respective project.
-- Add an actuator on the respective device (ex: samsung_smart_tv_remote).
+### CloudAMQP ###
+- Create a free account on [CloudAMQP](https://www.cloudamqp.com).
+- Create a new instance. The free plan is enough.
+- Go to the RabbitMQ Manager.
+- Add a new "exchange":
+	- name: google.home.assistant
+	- type: direct
+- Add a new "queue":
+	- name: samsung.smart.tv
+	- arguments: Message TTL with the value of 30000
+- Go back to the exchange that you created and add a binding to the queue:
+	- name: samsung.smart.tv
+	- routing key: samsung.smart.tv
 
 ### Locally ###
 
