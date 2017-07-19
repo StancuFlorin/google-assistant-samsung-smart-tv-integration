@@ -1,4 +1,4 @@
-# Google Home - Samsung Smart TV Integration #
+# Google Assistant - Samsung Smart TV Integration #
 
 Use your Google Home device as a remote for your Samsung Smart TV. There is no need for a Logitech Harmony device.
 
