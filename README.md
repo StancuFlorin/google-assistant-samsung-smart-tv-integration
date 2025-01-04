@@ -6,7 +6,7 @@ Use your Google Home device as a remote for your Samsung Smart TV. There is no n
 
 # Old TVs
 
-If you have an older TV (<2016) that are not using websockets, you will need to use the [old version](https://github.com/StancuFlorin/google-assistant-samsung-smart-tv-integration/tree/version-2) of the script written in Python2 and using [samsungctl](https://github.com/Ape/samsungctl) for [legacy support](https://github.com/StancuFlorin/google-assistant-samsung-smart-tv-integration/blob/version-2/config.ini).
+If you have an older TV (<2016) that are not using websockets, you will need to use the [old version](https://github.com/StancuFlorin/google-assistant-samsung-smart-tv-integration/releases/tag/version-2) of the script written in Python2 and using [samsungctl](https://github.com/Ape/samsungctl) for [legacy support](https://github.com/StancuFlorin/google-assistant-samsung-smart-tv-integration/blob/version-2/config.ini).
 
 ## Requirements ##
 
