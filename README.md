@@ -4,10 +4,14 @@ Use your Google Home device as a remote for your Samsung Smart TV. There is no n
 
 ![Integration Flow](https://raw.githubusercontent.com/StancuFlorin/Google-Home-Samsung-Smart-TV-Integration/master/flow.png "Integration Flow")
 
+# Old TVs
+
+If you have an older TV (<2016) that are not using websockets, you will need to use the [old version](https://github.com/StancuFlorin/google-assistant-samsung-smart-tv-integration/tree/python2) of the script written in Python2 and using [samsungctl](https://github.com/Ape/samsungctl) for [legacy support](https://github.com/StancuFlorin/google-assistant-samsung-smart-tv-integration/blob/python2/config.ini).
+
 ## Requirements ##
 
-- Python 2.7
-- ``# pip install -r requirements.txt``
+- Python 3.6 or later 
+- `# pip install -r requirements.txt`
 
 ## Installation ##
 
@@ -28,7 +32,7 @@ Use your Google Home device as a remote for your Samsung Smart TV. There is no n
 ### Locally ###
 
 - Check the ``config.ini`` file and add your own details there.
-- To enable to comunication with your TV you will need to put the correct IP on ``SamsungSmartTV.host``. Your TV should be on the same network with the PC that will run this script. If you have an older TV (<2016) you will need to change the method and the port also. Check [samsungctl](https://github.com/Ape/samsungctl) for more information.
+- To enable to comunication with your TV you will need to put the correct IP on ``SamsungSmartTV.host``. Your TV should be on the same network with the PC that will run this script.
 - The CloudAMQP information also needs to be added. Make sure that you add the correct data there.
 - Run the script using ``python samsung-smart-tv-remote.py`` or ``./samsung-smart-tv-remote.py``
 
