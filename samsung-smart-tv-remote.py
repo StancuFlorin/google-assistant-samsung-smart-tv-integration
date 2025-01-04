@@ -1,54 +1,63 @@
-#!/usr/bin/env python
+import configparser
+import pika
+import json
+import time
+from samsungtvws import SamsungTVWS
 
-import configparser, pika, json, time, samsungctl
-
+# Load configuration
 config = configparser.ConfigParser()
 config.read('config.ini')
 
+# Setup CloudAMQP connection
 params = pika.URLParameters(config['CloudAMQP']['url'])
 params.socket_timeout = 5
-connection = pika.BlockingConnection(params) # Connect to CloudAMQP
-channel = connection.channel() # start a channel
+connection = pika.BlockingConnection(params)  # Connect to CloudAMQP
+channel = connection.channel()  # Start a channel
 
+# Samsung TV configuration
 config_remote = {
-    "name": config['SamsungSmartTV']['name'],
-    "description": config['SamsungSmartTV']['description'],
-    "id": "",
     "host": config['SamsungSmartTV']['host'],
     "port": int(config['SamsungSmartTV']['port']),
-    "method": config['SamsungSmartTV']['method'],
-    "timeout": 0
+    "timeout": 0,
 }
 
-def change_channel(channel):
-	with samsungctl.Remote(config_remote) as remote:
-		for digit in channel:
-			print "working on", digit
-			remote.control("KEY_" + digit)
-			time.sleep(0.5)
-		remote.control("KEY_ENTER")
-		print "The channel was changed to", channel
+# Function to change the TV channel
+def change_channel(channel_number):
+    with SamsungTVWS(host=config_remote['host'], port=config_remote['port']) as remote:
+        for digit in str(channel_number):
+            print(f"Sending digit: {digit}")
+            remote.send_key(f"KEY_{digit}")
+            time.sleep(0.5)
+        remote.send_key("KEY_ENTER")
+        print(f"Channel changed to {channel_number}")
 
+# Function to turn off the TV
 def turn_off_tv():
-	with samsungctl.Remote(config_remote) as remote:
-		print "The TV is shutting down"
-		remote.control("KEY_POWER")
-	
-# create a function which is called on incoming messages
-def callback(ch, method, properties, body):
-	message = json.loads(body)
-	
-	if message['command'] == "CHANGE_CHANNEL":
-		change_channel(message['value'])
-	elif message['command'] == "TURN_OFF":
-		turn_off_tv()
-	else:
-		print "There is no custom command implemented for", message['command']
-		
-# set up subscription on the queue
-channel.basic_consume(callback, queue=config['CloudAMQP']['queue'], no_ack=True)
+    with SamsungTVWS(host=config_remote['host'], port=config_remote['port']) as remote:
+        print("Shutting down the TV")
+        remote.send_key("KEY_POWER")
 
-#print "Waiting for commands"
-channel.start_consuming() # start consuming (blocks)
+# Callback function for incoming messages
+def callback(ch, method, properties, body):
+    message = json.loads(body)
+    command = message.get('command')
+    value = message.get('value')
+
+    if command == "CHANGE_CHANNEL":
+        change_channel(value)
+    elif command == "TURN_OFF":
+        turn_off_tv()
+    else:
+        print(f"No command implemented for: {command}")
+
+# Set up subscription to the queue
+channel.basic_consume(
+    queue=config['CloudAMQP']['queue'],
+    on_message_callback=callback,
+    auto_ack=True
+)
+
+print("Waiting for commands...")
+channel.start_consuming()  # Start consuming (blocks)
 
 connection.close()
