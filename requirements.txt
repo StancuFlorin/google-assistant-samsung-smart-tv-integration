@@ -1,4 +1,2 @@
-configparser 
-pika
-samsungctl
-websocket-client
+pika==1.3.1
+samsungtvws==1.8.0
